@@ -739,11 +739,11 @@ button {
 }
 
 .tech-grid {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
   margin-top: 2rem;
-  align-items: start;
+  width: 100%;
 }
 
 .table-responsive {
@@ -759,7 +759,7 @@ button {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 0.92rem;
+  font-size: 0.94rem;
 }
 
 .specs-table th {
@@ -767,13 +767,13 @@ button {
   color: var(--navy-dark);
   font-family: var(--font-heading);
   font-weight: 700;
-  padding: 1rem 1.2rem;
+  padding: 1.1rem 1.4rem;
   border-bottom: 2px solid var(--border-light);
   white-space: nowrap;
 }
 
 .specs-table td {
-  padding: 1rem 1.2rem;
+  padding: 1.1rem 1.4rem;
   border-bottom: 1px solid var(--border-light);
   color: var(--text-main);
   white-space: nowrap;
@@ -796,69 +796,60 @@ button {
   color: var(--navy-dark);
 }
 
-/* Available Sizes Card */
+/* Available Sizes Banner */
 .available-sizes-card {
   background-color: var(--bg-white);
   border: 1px solid var(--border-light);
   border-radius: 8px;
-  padding: 2.2rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
-  box-shadow: var(--shadow-md);
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
-}
-
-.available-sizes-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--red-primary);
+  border-left: 4px solid var(--red-primary);
 }
 
 .card-title-sm {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.75rem;
 }
 
 .size-highlight-large {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--red-primary);
   line-height: 1;
-  margin-bottom: 0.4rem;
 }
 
 .size-range-mm {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--navy-dark);
-  margin-bottom: 1.5rem;
 }
 
 .size-icon-wrapper {
-  margin: 1rem 0 1.2rem 0;
   color: var(--navy-light);
+  display: flex;
+  align-items: center;
 }
 
 .size-tagline {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-muted);
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-light);
-  width: 100%;
+  color: var(--navy-dark);
+  width: auto;
+  border-top: none;
+  padding-top: 0;
 }
 
 /* ==========================================================================
