@@ -10,8 +10,44 @@ document.addEventListener('DOMContentLoaded', () => {
   initUnitToggle();
   initSearch();
   initQuoteForm();
-  initVideoPlayer();
+  initGalleryTabs();
 });
+
+/* Gallery Tabs Switching */
+function initGalleryTabs() {
+  const tabBtns = document.querySelectorAll('.gallery-tab-btn');
+  const tabPanes = document.querySelectorAll('.gallery-tab-pane');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-tab');
+      const pane = document.getElementById(targetId);
+      if (pane) pane.classList.add('active');
+    });
+  });
+}
+
+function openHighResLightbox(imgSrc, title = 'Plan Teknik Fit Up Clamp', desc = 'Plan Teknik Fit Up Clamp high-resolution product photography.') {
+  const backdrop = document.getElementById('modal-backdrop');
+  const lightboxModal = document.getElementById('lightbox-modal');
+  if (!backdrop || !lightboxModal) return;
+
+  document.getElementById('lightbox-title').textContent = title;
+  document.getElementById('lightbox-img').src = imgSrc;
+  const descEl = document.getElementById('lightbox-desc');
+  if (descEl) descEl.textContent = desc;
+
+  const allModals = document.querySelectorAll('.modal-container');
+  allModals.forEach(m => m.style.display = 'none');
+  lightboxModal.style.display = 'block';
+  backdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 
 /* Sticky Header Scroll Effect */
 function initStickyHeader() {

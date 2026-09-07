@@ -21,6 +21,7 @@
         <ul class="nav-menu">
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#overview" class="nav-link">Products</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#applications" class="nav-link">Applications</a></li>
           <li><a href="#why-choose" class="nav-link">About Us</a></li>
           <li><a href="#" class="nav-link" data-open-datasheet>Downloads</a></li>
@@ -171,6 +172,94 @@
 
             <div class="side-statement-box">
               <span class="side-statement-title">STRONGER ALIGNMENT<br>SMOOTHER FLOW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PRODUCT GALLERY SECTION (FEATURING ALL 7 PRODUCT IMAGES) -->
+    <section id="gallery" class="section-spacing" style="background-color: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <span class="red-accent-bar"></span>
+        <h2 class="heading-lg" style="margin-bottom: 0.5rem;">PRODUCT GALLERY & ANATOMY</h2>
+        <p class="text-muted" style="margin-bottom: 2rem;">Explore full high-resolution engineering photography of the Plan Teknik Fit Up Clamp series.</p>
+
+        <!-- Gallery Tabs Navigation -->
+        <div class="gallery-tabs-nav">
+          <button class="gallery-tab-btn active" data-tab="tab-family">Clamp Family (fit-up-clamp-2)</button>
+          <button class="gallery-tab-btn" data-tab="tab-specs">Features & Anatomy (fit-up-clamp-3)</button>
+          <button class="gallery-tab-btn" data-tab="tab-sizes">Size Range Stack (fit-up-clamp-4)</button>
+          <button class="gallery-tab-btn" data-tab="tab-front">Front Profile (fit-up-clamp-5)</button>
+          <button class="gallery-tab-btn" data-tab="tab-renders">3D Fitting Renders (fit-up-clamp-6)</button>
+          <button class="gallery-tab-btn" data-tab="tab-packaging">Packaging & Shipping (fit-up-clamp-1)</button>
+        </div>
+
+        <!-- Gallery Content Views -->
+        <div class="gallery-content-wrapper">
+          <!-- Tab 1: Family -->
+          <div id="tab-family" class="gallery-tab-pane active">
+            <div class="gallery-img-card" onclick="openHighResLightbox('fit-up-clamp-2.webp', 'Plan Teknik Fit Up Clamp Family')">
+              <img src="fit-up-clamp-2.webp" alt="Plan Teknik Fit Up Clamp Family Standing">
+              <div class="gallery-img-caption">
+                <h4>Plan Teknik Fit Up Clamp Family</h4>
+                <p>Heavy duty double-walled steel plate construction for pipe diameters 1" through 16". Click to view full resolution.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Specs & Anatomy -->
+          <div id="tab-specs" class="gallery-tab-pane">
+            <div class="gallery-img-card" onclick="openHighResLightbox('fit-up-clamp-3.webp', 'Mechanical Anatomy & Clamping Screw Detail')">
+              <img src="fit-up-clamp-3.webp" alt="Mechanical Anatomy & Clamping Screw Detail">
+              <div class="gallery-img-caption">
+                <h4>Mechanical Anatomy & Clamping Detail</h4>
+                <p>Main body trapezoidal clamping screw, ergonomic star Bakelite handle, and butterfly safety nut. Click to expand.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Sizes Stack -->
+          <div id="tab-sizes" class="gallery-tab-pane">
+            <div class="gallery-img-card" onclick="openHighResLightbox('fit-up-clamp-4.webp', 'Fit Up Clamp Size Range Array (1 inch - 16 inch)')">
+              <img src="fit-up-clamp-4.webp" alt="Fit Up Clamp Size Range Array">
+              <div class="gallery-img-caption">
+                <h4>Complete Size Range Array (1" &ndash; 16")</h4>
+                <p>Overview of PBKK 1-2, PBKK 2-6, PBKK 8-12, PBKK 12-14, and PBKK 14-16 models.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Front Profile -->
+          <div id="tab-front" class="gallery-tab-pane">
+            <div class="gallery-img-card" onclick="openHighResLightbox('fit-up-clamp-5.webp', 'Front Profile and Clamping Mechanism')">
+              <img src="fit-up-clamp-5.webp" alt="Front Profile and Clamping Mechanism">
+              <div class="gallery-img-caption">
+                <h4>Front Profile & 120&deg; 3-Point Alignment</h4>
+                <p>Demonstrating symmetric 120-degree pressure distribution across pipe circumferences.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Renders Grid -->
+          <div id="tab-renders" class="gallery-tab-pane">
+            <div class="gallery-img-card" onclick="openHighResLightbox('fit-up-clamp-6.webp', '3D Fitting Renders (Straight, Elbow, Flange, Tee, Reduction, Cap)')">
+              <img src="fit-up-clamp-6.webp" alt="3D Fitting Renders Grid">
+              <div class="gallery-img-caption">
+                <h4>3D Engineering Fitting Renders Grid</h4>
+                <p>Detailed CAD models of Fit Up Clamp mounted on straight pipes, 90&deg; elbows, flanges, and caps.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 6: Packaging -->
+          <div id="tab-packaging" class="gallery-tab-pane">
+            <div class="gallery-img-card" onclick="openHighResLightbox('fit-up-clamp-1.webp', 'Export Packaging (Wooden Crates, Wrapped Clamps, Cardboard Boxes)')">
+              <img src="fit-up-clamp-1.webp" alt="Export Packaging Overview">
+              <div class="gallery-img-caption">
+                <h4>Export Packaging Standards</h4>
+                <p>Heavy duty wooden crates, moisture-sealed protective wrapping, and labelled cardboard boxes.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -468,9 +557,9 @@
     <section id="why-choose" class="section-spacing">
       <div class="container">
         <div class="video-why-grid">
-          <!-- Video Card -->
+          <!-- Video Card (fit-up-clamp-7.jpg) -->
           <div class="video-card" data-open-video>
-            <img src="assets/video-thumb.png" alt="Plan Teknik Fit Up Clamp Video Thumbnail" class="video-poster">
+            <img src="fit-up-clamp-7.jpg" alt="Plan Teknik Fit Up Clamp Video Thumbnail" class="video-poster">
             <div class="video-overlay">
               <div class="play-btn-pulse">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -528,22 +617,22 @@
       </div>
     </section>
 
-    <!-- PACKAGING -->
+    <!-- PACKAGING (fit-up-clamp-1.webp) -->
     <section id="packaging" class="section-spacing packaging-section">
       <div class="container">
         <span class="red-accent-bar"></span>
         <h2 class="heading-lg">PACKAGING</h2>
 
         <div class="packaging-grid">
-          <div class="pack-card">
+          <div class="pack-card" onclick="openHighResLightbox('fit-up-clamp-1.webp', 'Export Packaging Standards')">
             <img src="assets/pack-crate-ref.png" alt="Wooden Shipping Crate Packaging">
           </div>
 
-          <div class="pack-card">
+          <div class="pack-card" onclick="openHighResLightbox('fit-up-clamp-1.webp', 'Wrapped Clamps Packaging')">
             <img src="assets/pack-wrapped-ref.png" alt="Individually Wrapped Clamps">
           </div>
 
-          <div class="pack-card">
+          <div class="pack-card" onclick="openHighResLightbox('fit-up-clamp-1.webp', 'Cardboard Boxes Packaging')">
             <img src="assets/pack-boxes-ref.png" alt="Boxed Products Aligned">
           </div>
 
@@ -581,6 +670,7 @@
 
         <ul class="footer-nav">
           <li><a href="#overview">Products</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#applications">Applications</a></li>
           <li><a href="#" data-open-datasheet>Downloads</a></li>
           <li><a href="#why-choose">About Us</a></li>
@@ -692,7 +782,7 @@
         <button class="modal-close" aria-label="Close modal">&times;</button>
       </div>
       <div class="modal-body" style="padding: 0; background: #000;">
-        <video id="modal-video-element" controls style="width: 100%; height: auto; display: block;" poster="assets/video-thumb.png">
+        <video id="modal-video-element" controls style="width: 100%; height: auto; display: block;" poster="fit-up-clamp-7.jpg">
           <source src="#" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -704,14 +794,14 @@
     </div>
 
     <!-- LIGHTBOX MODAL -->
-    <div id="lightbox-modal" class="modal-container" style="max-width: 700px; display: none;">
+    <div id="lightbox-modal" class="modal-container" style="max-width: 850px; display: none;">
       <div class="modal-header">
-        <h3 id="lightbox-title" class="modal-title">Application View</h3>
+        <h3 id="lightbox-title" class="modal-title">Product Photography Lightbox</h3>
         <button class="modal-close" aria-label="Close modal">&times;</button>
       </div>
-      <div class="modal-body" style="text-align: center;">
-        <img id="lightbox-img" src="" alt="Application Diagram" style="max-height: 400px; margin: 0 auto; border-radius: 6px;">
-        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+      <div class="modal-body" style="text-align: center; max-height: 80vh; overflow-y: auto;">
+        <img id="lightbox-img" src="" alt="Plan Teknik Product Photography" style="max-width: 100%; max-height: 550px; margin: 0 auto; border-radius: 6px; box-shadow: var(--shadow-md);">
+        <p id="lightbox-desc" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">
           Plan Teknik Fit Up Clamp provides 120&deg; 3-point precision alignment for flawless welding preparation.
         </p>
       </div>

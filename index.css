@@ -1334,7 +1334,102 @@ button {
   color: var(--text-muted);
 }
 
-/* Responsive Styles */
+/* ==========================================================================
+   PRODUCT GALLERY & ANATOMY SECTION
+   ========================================================================== */
+.gallery-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-tab-btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.gallery-tab-btn:hover {
+  border-color: var(--red-primary);
+  color: var(--red-primary);
+}
+
+.gallery-tab-btn.active {
+  background-color: var(--navy-dark);
+  color: var(--text-white);
+  border-color: var(--navy-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-content-wrapper {
+  position: relative;
+}
+
+.gallery-tab-pane {
+  display: none;
+}
+
+.gallery-tab-pane.active {
+  display: block;
+}
+
+.gallery-img-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.gallery-img-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(227, 6, 19, 0.4);
+}
+
+.gallery-img-card img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  background-color: #FAFBFD;
+  padding: 1.5rem;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-img-card:hover img {
+  transform: scale(1.02);
+}
+
+.gallery-img-caption {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border-light);
+  background-color: var(--bg-white);
+}
+
+.gallery-img-caption h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 0.3rem;
+}
+
+.gallery-img-caption p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Modal Styles */
+
 @media (max-width: 1024px) {
   .hero-grid,
   .overview-grid,
