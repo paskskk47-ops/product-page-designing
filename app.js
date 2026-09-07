@@ -13,25 +13,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initOverviewSwitcher();
 });
 
+window.switchOverviewView = function(btn, imgSrc, title) {
+  const viewBtns = document.querySelectorAll('.overview-view-btn');
+  const displayImg = document.getElementById('overview-display-img');
+  
+  if (viewBtns.length) {
+    viewBtns.forEach(b => b.classList.remove('active'));
+  }
+  if (btn) {
+    btn.classList.add('active');
+  }
+
+  if (displayImg && imgSrc) {
+    displayImg.style.opacity = '0.3';
+    setTimeout(() => {
+      displayImg.src = imgSrc;
+      displayImg.style.opacity = '1';
+    }, 150);
+  }
+};
+
 /* Overview Product View Switcher */
 function initOverviewSwitcher() {
   const viewBtns = document.querySelectorAll('.overview-view-btn');
-  const displayImg = document.getElementById('overview-display-img');
-  if (!viewBtns.length || !displayImg) return;
+  if (!viewBtns.length) return;
 
   viewBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      viewBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
+    btn.addEventListener('click', (e) => {
+      if (e) e.stopPropagation();
       const imgSrc = btn.getAttribute('data-img');
-      if (imgSrc) {
-        displayImg.style.opacity = '0.5';
-        setTimeout(() => {
-          displayImg.src = imgSrc;
-          displayImg.style.opacity = '1';
-        }, 150);
-      }
+      const title = btn.getAttribute('data-title');
+      switchOverviewView(btn, imgSrc, title);
     });
   });
 }
@@ -40,7 +52,7 @@ function openOverviewLightbox() {
   const displayImg = document.getElementById('overview-display-img');
   if (!displayImg) return;
   const activeBtn = document.querySelector('.overview-view-btn.active');
-  const title = activeBtn ? activeBtn.getAttribute('data-title') : 'Plan Teknik Fit Up Clamp';
+  const title = activeBtn ? activeBtn.getAttribute('data-title') : 'Technical Pipeline Fit Up Clamp';
   openHighResLightbox(displayImg.src, title);
 }
 
