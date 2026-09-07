@@ -611,13 +611,19 @@ button {
   color: var(--navy-dark);
 }
 
+/* ==========================================================================
    PRODUCT OVERVIEW SECTION
    ========================================================================== */
 .overview-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 4rem;
+}
+
+.overview-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .overview-content p {
@@ -628,6 +634,8 @@ button {
 }
 
 .overview-visual {
+  flex: 1;
+  min-width: 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1533,7 +1541,6 @@ button {
 
 @media (max-width: 1024px) {
   .hero-grid,
-  .overview-grid,
   .tech-grid,
   .video-why-grid {
     grid-template-columns: 1fr;
@@ -1558,6 +1565,11 @@ button {
 }
 
 @media (max-width: 768px) {
+  .overview-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .nav-menu {
     display: none;
   }
