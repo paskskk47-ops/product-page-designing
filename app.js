@@ -10,26 +10,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initUnitToggle();
   initSearch();
   initQuoteForm();
-  initGalleryTabs();
+  initOverviewSwitcher();
 });
 
-/* Gallery Tabs Switching */
-function initGalleryTabs() {
-  const tabBtns = document.querySelectorAll('.gallery-tab-btn');
-  const tabPanes = document.querySelectorAll('.gallery-tab-pane');
+/* Overview Product View Switcher */
+function initOverviewSwitcher() {
+  const viewBtns = document.querySelectorAll('.overview-view-btn');
+  const displayImg = document.getElementById('overview-display-img');
+  if (!viewBtns.length || !displayImg) return;
 
-  tabBtns.forEach(btn => {
+  viewBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabPanes.forEach(p => p.classList.remove('active'));
-
+      viewBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const targetId = btn.getAttribute('data-tab');
-      const pane = document.getElementById(targetId);
-      if (pane) pane.classList.add('active');
+
+      const imgSrc = btn.getAttribute('data-img');
+      if (imgSrc) {
+        displayImg.style.opacity = '0.5';
+        setTimeout(() => {
+          displayImg.src = imgSrc;
+          displayImg.style.opacity = '1';
+        }, 150);
+      }
     });
   });
 }
+
+function openOverviewLightbox() {
+  const displayImg = document.getElementById('overview-display-img');
+  if (!displayImg) return;
+  const activeBtn = document.querySelector('.overview-view-btn.active');
+  const title = activeBtn ? activeBtn.getAttribute('data-title') : 'Plan Teknik Fit Up Clamp';
+  openHighResLightbox(displayImg.src, title);
+}
+
 
 function openHighResLightbox(imgSrc, title = 'Plan Teknik Fit Up Clamp', desc = 'Plan Teknik Fit Up Clamp high-resolution product photography.') {
   const backdrop = document.getElementById('modal-backdrop');
