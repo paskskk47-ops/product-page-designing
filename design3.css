@@ -1,0 +1,336 @@
+/* ==========================================================================
+   DESIGN 3: ULTRA-CLEAN EUROPEAN MINIMALIST ENGINEERING THEME
+   Light Clean (#FAFAFA), Deep Navy (#0F172A), Electric Indigo (#4F46E5)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-clean: #FAFAFA;
+  --bg-white: #FFFFFF;
+  --bg-card: #F1F5F9;
+  --navy-bold: #0F172A;
+  --indigo-primary: #4F46E5;
+  --indigo-soft: rgba(79, 70, 229, 0.08);
+  --emerald-accent: #10B981;
+  --text-dark: #0F172A;
+  --text-muted: #64748B;
+  --border-clean: #E2E8F0;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-clean);
+  color: var(--text-dark);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-clean);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Floating Design Switcher Bar across all pages */
+.design-switcher-bar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-clean);
+  padding: 0.4rem 0.6rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.design-switcher-label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--indigo-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 0.6rem;
+}
+
+.design-tab-link {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.design-tab-link:hover {
+  color: var(--navy-bold);
+  background: var(--bg-card);
+}
+
+.design-tab-link.active {
+  background: var(--indigo-primary);
+  color: #FFF;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+/* HEADER CLEAN */
+.clean-header {
+  padding: 1.2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-clean);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.clean-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.clean-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-bold);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clean-logo span {
+  color: var(--indigo-primary);
+}
+
+.clean-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.clean-menu a {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.clean-menu a:hover {
+  color: var(--indigo-primary);
+}
+
+.btn-indigo {
+  background-color: var(--indigo-primary);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-indigo:hover {
+  background-color: #3730A3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+}
+
+/* MINIMALIST HERO */
+.clean-hero {
+  padding: 7rem 0 4rem 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+}
+
+.clean-hero-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.clean-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--indigo-soft);
+  color: var(--indigo-primary);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.clean-hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--navy-bold);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.clean-hero-title span {
+  color: var(--indigo-primary);
+}
+
+.clean-hero-desc {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+}
+
+.clean-hero-features {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.clean-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--navy-bold);
+}
+
+.clean-feature-item span.icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--emerald-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* Minimalist Card Display */
+.clean-showcase-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-clean);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+  position: relative;
+}
+
+.clean-showcase-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.clean-showcase-card:hover img {
+  transform: scale(1.02);
+}
+
+/* WORKFLOW TABBED SLIDER */
+.workflow-section {
+  padding: 5rem 0;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-clean);
+  border-bottom: 1px solid var(--border-clean);
+}
+
+.workflow-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.workflow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.workflow-step-card {
+  background: var(--bg-clean);
+  border: 1px solid var(--border-clean);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.workflow-step-card:hover {
+  background: #FFF;
+  border-color: var(--indigo-primary);
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1);
+  transform: translateY(-4px);
+}
+
+.workflow-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--indigo-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.workflow-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-bold);
+  margin-bottom: 0.6rem;
+}
+
+.workflow-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .clean-hero-container {
+    grid-template-columns: 1fr;
+  }
+  .workflow-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
